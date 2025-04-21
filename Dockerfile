@@ -11,3 +11,6 @@ COPY --from=build /home/app/target/*.jar /app.jar
 
 # Executar a aplicação
 ENTRYPOINT ["java", "-jar", "/app.jar"]
+
+# Expor a porta 8080
+EXPOSE 8080
