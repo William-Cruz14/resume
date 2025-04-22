@@ -22,8 +22,8 @@ public class ResumeController {
     }
 
     // Endpoint to get a resume by ID
-    @GetMapping("/{id}")
-    public Resume getResumeById(@PathVariable Long id) {
+    @GetMapping()
+    public Resume getResumeById(@RequestParam Long id) {
         return resumeService.getResumeById(id);
     }
 
@@ -36,6 +36,11 @@ public class ResumeController {
     @PostMapping("/bulk")
     public List<Resume> createResumes(@RequestBody List<Resume> resumes) {
         return resumeService.createResumes(resumes);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteResume(@PathVariable Long id) {
+        resumeService.deleteResume(id);
     }
 
 

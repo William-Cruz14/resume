@@ -35,5 +35,9 @@ public class ResumeService {
         return resumeRepository.saveAll(resumes);
     }
 
+    public void deleteResume(Long id) {
+        resumeRepository.deleteById(id);
+    }
+
 
 }
