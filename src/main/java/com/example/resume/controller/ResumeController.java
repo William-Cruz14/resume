@@ -22,8 +22,8 @@ public class ResumeController {
     }
 
     // Endpoint to get a resume by ID
-    @GetMapping()
-    public Resume getResumeById(@RequestParam Long id) {
+    @GetMapping("/{id}")
+    public Resume getResumeById(@PathVariable Long id) {
         return resumeService.getResumeById(id);
     }
 
